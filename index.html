@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Café</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f7f3e9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+             width: 100%;
+             z-index: 19;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #5c4033;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style-type: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .hero {
+            background-image: url('cafe-background.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            color: #fff;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .menu {
+            padding: 40px 20px;
+            background-color: #fff;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0e6db;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .menu-item h3 {
+            margin-top: 10px;
+        }
+
+        .reviews {
+            padding: 40px 20px;
+            background-color: #f7f3e9;
+            text-align: center;
+        }
+
+        .review-carousel {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+            animation: slide 12s infinite;
+        }
+
+        .review {
+            min-width: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes slide {
+            0% {transform: translateX(0);}
+            33% {transform: translateX(-100%);}
+            66% {transform: translateX(-200%);}
+            100% {transform: translateX(0);}
+        }
+
+        footer {
+            background-color: #5c4033;
+            color: #fff;
+            padding: 40px 80px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .footer-content div {
+            text-align: center;
+        }
+        .footer-content iframe{
+            width: 100%;
+            max-width: 200px;
+            height: 100px;
+            border-radius: 10px;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Cozy Café</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to Cozy Café – Your cozy spot for the best coffee in town!</h1>
+        </div>
+    </section>
+    <section class="menu" id="menu">
+        <h2>Our Menu</h2>
+        <div class="menu-grid">
+            <div class="menu-item">
+                <img src="coffee1.jpg" alt="Coffee 1">
+                <h3>Espresso</h3>
+                <p>$3.00 - Rich and bold espresso.</p>
+            </div>
+            <div class="menu-item">
+                <img src="coffee2.jpg" alt="Coffee 2">
+                <h3>Latte</h3>
+                <p>$4.50 - Smooth and creamy latte.</p>
+            </div>
+            <div class="menu-item">
+                <img src="coffee3.jpg" alt="Coffee 3">
+                <h3>Cappuccino</h3>
+                <p>$4.00 - Frothy and rich cappuccino.</p>
+            </div>
+            <div class="menu-item">
+                <img src="coffee4.jpg" alt="Coffee 4">
+                <h3>Mocha</h3>
+                <p>$5.00 - Chocolatey and rich mocha.</p>
+            </div>
+        </div>
+    </section>
+    <section class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review-carousel">
+            <div class="review">
+                <p>"Best coffee in town! The ambiance is perfect." –Rishabh</p>
+            </div>
+            <div class="review">
+                <p>"I love spending my mornings here. Great service!" – Kapil</p>
+            </div>
+            <div class="review">
+                <p>"Their cappuccino is my favorite. Always fresh!" – Ayan</p>
+            </div>
+        </div>
+    </section>
+    <footer id="contact">
+        <div class="footer-content">
+            <div>
+                <h3>Opening Hours</h3>
+                <p>Mon-Fri: 8am - 8pm</p>
+                <p>Sat-Sun: 9am - 6pm</p>
+            </div>
+            <div>
+                <h3>Location</h3>
+                <p>Ayan Complex, Chowk, Lucknow</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4315.118331512919!2d80.90514080120685!3d26.85995261563984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1728836864936!5m2!1sen!2sin"></iframe>
+               
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: contact@cozycafe.com</p>
+                <p>Phone: (+91) 9845XXXX40</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
